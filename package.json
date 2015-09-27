@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@unumux/ui-framework": "^2.5.1"
+  },
+  "dependencies": {
+    "skrollr": "^0.6.26"
+  }
+}
