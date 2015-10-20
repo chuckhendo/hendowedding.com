@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="205px" height="205px" viewBox="0 0 205 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 3 + Oval 3 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(-342.000000, -342.000000)">
+            <g id="Oval-3-+-Oval-3-Copy-3" transform="translate(445.207107, 444.500000) rotate(45.000000) translate(-445.207107, -444.500000) translate(342.207107, 341.500000)" sketch:type="MSShapeGroup">
+                <circle id="Oval-3" fill-opacity="0.33" fill="#002226" cx="102.5" cy="103.5" r="102.5"></circle>
+                <path d="M111.600515,205.601527 C163.946808,200.996232 205,157.04236 205,103.5 C205,50.6975011 165.073534,7.22032804 113.763967,1.61184561 C150.991507,14.5082477 178.174817,55.1314401 178.174817,103.249389 C178.174817,152.29469 149.93363,193.553566 111.600495,205.601529 L111.600515,205.601527 Z" id="Oval-3-Copy-2" fill="#8ABEAF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,6 +6,67 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: #4E4E50 url('../images/coming-soon.png') 50% 50% no-repeat;
-  background-size: contain;
+}
+
+body {
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #234246;
+  overflow: hidden;
+  display: flex;
+
+  h1 {
+    font-family:'Rockwell W01 Extra Bold';
+    text-transform: uppercase;
+    align-self: center;
+    text-align: right;
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 14vw;
+    padding-bottom: 0.25em;
+    margin-bottom: 1em;
+    color: #8ABEAF;
+    line-height: 0.9;
+    background: url('../images/and.svg') no-repeat 6% bottom;
+    background-size: 40% auto;
+  }
+
+  .background, .background > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 100% auto;
+    z-index: 0;
+  }
+
+  .background > .moon {
+    z-index: 0;
+    width: 10vw;
+    height: 10vw;
+    top: 5vh;
+    left: 5vw;
+    right: auto;
+    bottom: auto;
+    background-image: url('../images/background/moon.svg');
+  }
+
+  $i: 7;
+  @while $i > 0 {
+    .b#{$i} {
+      background-image: url('../images/background/#{$i}.svg');
+      z-index: $i;
+    }
+    $i: $i - 1;
+  }
 }
