@@ -5,4 +5,5 @@
 
 var skrollr = require('skrollr');
 
-var s = skrollr.init();
+var s = skrollr.init({
+});

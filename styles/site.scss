@@ -11,6 +11,7 @@ html, body {
 body {
     color: #111;
     -webkit-font-smoothing: antialiased;
+    perspective: 1000px;
 }
 
 .site-header {
@@ -18,11 +19,13 @@ body {
   height: 100vh;
   position: relative;
   background: url('../images/background/stars.png');
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-size: 500px auto;
   background-color: #234246;
   overflow: hidden;
   display: flex;
+  perspective: 0px;
+
 
   // &:after {
   //   content: '';
@@ -66,6 +69,8 @@ body {
     background-position: 50% 100%;
     background-size: 100% auto;
     z-index: 2;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
   }
 
   .background > .moon {
