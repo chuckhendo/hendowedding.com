@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="hendowedding">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="styles/site.min.css">
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/6ee4268f-5c87-444a-a5ee-ab82a5e1d0b5.js"></script>
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
     <header class="site-header">
       <div class="sky" data-anchor-target=".site-header" data-top="transform: translate3d(0, 0vh, 0);" data-top-bottom="transform: translate3d(0, 40vh, 0);"></div>
       <h1 data-anchor-target=".site-header" data-top="transform: translate3d(0, 0px, 0);" data-top-bottom="transform: translate3d(0, 155px, 0);">Karolyn Carl</h1>
@@ -23,6 +23,8 @@
     <section class="introduction">
       <div class="container">
         <h1>The Wedding</h1>
+        <button class="show-rsvp" ng-click="main.showRsvp()">Show rsvp</button>
+
         <div class="grid">
           <div class="when">
             <h2>When</h2>
@@ -100,6 +102,31 @@
           </ul>
         </div>
       </div>
+    </section>
+    <section class="rsvp" ng-show="main.rsvpVisible">
+      <div class="overlay" ng-click="main.hideRsvp()"></div>
+      <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.rsvp === 'Yes' }">
+        <div class="main-info">
+          <h1>RSVP</h1>
+          <label for="name">Name</label>
+          <input id="name" type="text" name="Name">
+          <div class="rsvp-yes-no">
+            <input type="radio" id="rsvp-yes" name="RSVP" ng-model="main.rsvp" value="Yes">
+            <label for="rsvp-yes">We&rsquo;ll be there!</label>
+            <input type="radio" id="rsvp-no" name="RSVP" ng-model="main.rsvp" value="No">
+            <label for="rsvp-no">We can&rsquo;t make it!</label>
+          </div>
+          <button type="submit">Submit</button>
+        </div>
+        <div class="additional-info" ng-show="main.rsvp === 'Yes'">
+          <label for="additional-guests">Names of all invited guests in your party that are coming</label>
+          <textarea name="Additional guests" id="additional-guests"></textarea>
+          <label for="food-allergies">Are there any food allergies we should be aware of?</label>
+          <textarea name="Food allergies" id="food-allergies"></textarea>
+          <label for="contact">What is the best way to contact you (in case we have questions)?</label>
+          <textarea name="Contact info" id="contact"></textarea>
+        </div>
+      </form>
     </section>
 
 

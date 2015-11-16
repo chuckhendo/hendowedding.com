@@ -2,11 +2,23 @@
 // Include scripts using Browserify by doing:
 // var $ = require('jquery');
 
+require('./modules/parallax.js');
+// require('./modules/form.js');
 
-var skrollr = require('skrollr');
+var angular = require('angular');
 
-var s = skrollr.init({
-  mobileCheck: function() {
-    return false;
+var app = angular.module('hendowedding', [require('angular-animate')]);
+
+
+
+app.controller('MainCtrl', ['$window', '$scope', function($window) {
+  this.rsvpVisible = false;
+
+  this.showRsvp = function() {
+    this.rsvpVisible = true;
   }
-});
+
+  this.hideRsvp = function() {
+    this.rsvpVisible = false;
+  }
+}]);
