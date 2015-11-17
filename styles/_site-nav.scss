@@ -1,0 +1,65 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+  background: $green;
+  border-bottom: 1px solid #000;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: $nav-height;
+    padding: 0 1em;
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  li {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+
+    &:last-child {
+      margin-left: auto;
+
+      a {
+        background: $pink;
+        color: #000;
+
+        &:hover {
+          background: lighten($pink, 5%);
+        }
+
+        &:active {
+          background: darken($pink, 3%);
+        }
+      }
+    }
+  }
+
+  a {
+    flex: 1 1 auto;
+    padding: 0.2em 0.8em;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Futura W01";
+    font-size: 1.2em;
+    border-radius: 3px;
+    transition: 0.3s background;
+
+    &:hover {
+      background: rgba(#fff, 0.3);
+    }
+
+    &:active {
+      background: rgba(#000, 0.1);
+    }
+  }
+}

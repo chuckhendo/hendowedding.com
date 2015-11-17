@@ -7,6 +7,15 @@
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/6ee4268f-5c87-444a-a5ee-ab82a5e1d0b5.js"></script>
 </head>
 <body ng-controller="MainCtrl as main" no-scroll="main.rsvpVisible">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#the-wedding"><span class="light">The</span> Wedding</a></li>
+        <li><a href="#places-to-stay">Places <span class="light">to</span> Stay</a></li>
+        <li><a href="#things-to-do">Things <span class="light">to</span> Do</a></li>
+        <li><a href="#registry">Registry</a></li>
+        <li><a href="#" ng-click="main.showRsvp()">RSVP</a></li>
+      </ul>
+    </nav>
     <header class="site-header">
       <div class="sky" data-anchor-target=".site-header" data-top="transform: translate3d(0, 0vh, 0);" data-top-bottom="transform: translate3d(0, 40vh, 0);"></div>
       <h1 data-anchor-target=".site-header" data-top="transform: translate3d(0, 0px, 0);" data-top-bottom="transform: translate3d(0, 155px, 0);">Karolyn Carl</h1>
@@ -20,10 +29,9 @@
         <div class="b7"></div>
       </div>
     </header>
-    <section class="introduction">
+    <section class="introduction" id="the-wedding">
       <div class="container">
-        <h1>The Wedding</h1>
-        <button class="show-rsvp" ng-click="main.showRsvp()">Show rsvp</button>
+        <h1><span class="light">The</span> Wedding</h1>
 
         <div class="grid">
           <div class="when">
@@ -64,9 +72,9 @@
         </div>
       </div>
     </section>
-    <section class="places-to-stay">
+    <section class="places-to-stay" id="places-to-stay">
       <div class="container">
-        <h1>Places to Stay</h1>
+        <h1>Places <span class="light">to</span> Stay</h1>
         <p>We have secured room blocks at the Hampton Inn Columbia Downtown Historic District ($135/night, 803-231-2000) and the Hilton Columbia Center ($139/night, 803-784-7800). Please mention the Nordfors-Henderson wedding when making a reservation. The deadline for these blocks is February 11, 2016.</p>
         <ul class="hotels">
           <li>
@@ -85,7 +93,7 @@
         <p>While we have blocks at two hotels, we highly recommend the Hampton Inn. It is closer to the venue, offers cheaper parking, includes breakfast, and is easier walking distance to one of Columbia’s downtown areas, the Vista. While the Hilton is only an extra block or two away, it seems that the Hampton Inn is the better deal. Please note that both hotels include complimentary Wi-Fi - If you’re part of our room block and are asked to pay for it, let us know!</p>
       </div>
     </section>
-    <section class="registry">
+    <section class="registry" id="registry">
       <div class="container">
         <h1>Registry</h1>
         <div class="content">
@@ -103,7 +111,7 @@
         </div>
       </div>
     </section>
-    <section class="rsvp" ng-show="main.rsvpVisible">
+    <section class="rsvp" ng-show="main.rsvpVisible" ng-cloak>
       <div class="overlay" ng-click="main.hideRsvp()"></div>
       <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.rsvp === 'Yes' }">
         <div class="main-info">

@@ -1,0 +1,77 @@
+.site-header {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  // background-attachment: fixed;
+  background-size: 500px auto;
+  background-color: #234246;
+  overflow: hidden;
+  display: flex;
+  perspective: 0px;
+
+  @keyframes move-mask {
+    from {
+      background-position: 3vw 3vw, 0 0, center center;
+    }
+
+    to {
+      background-position: 3vw 3vw, -10000px 5000px, center center;
+    }
+  }
+
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/background/moon.svg'), url('../images/background/mask.png'), url('../images/background/stars.png');
+    background-repeat: no-repeat, repeat, repeat;
+    background-size: 10vw 10vw, auto auto, 500px auto;
+    background-position: 3vw calc(3vw + #{$nav-height}), 0 0, center center;
+    animation: move-mask 50s linear alternate;
+  }
+
+  h1 {
+    font-family:'Rockwell W01';
+    font-weight: 800;
+    text-transform: uppercase;
+    align-self: center;
+    text-align: right;
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 14vw;
+    padding-bottom: 0.25em;
+    margin-bottom: 1em;
+    color: #8ABEAF;
+    line-height: 0.9;
+    background: url('../images/and.svg') no-repeat 6% bottom;
+    background-size: 40% auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .background, .background > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 100% auto;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+  }
+
+  $i: 7;
+  @while $i > 0 {
+    .b#{$i} {
+      background-image: url('../images/background/#{$i}.svg');
+      z-index: $i;
+    }
+    $i: $i - 1;
+  }
+}
