@@ -8,6 +8,8 @@ section {
   font-family: 'Futura W01';
   padding: 100px;
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 
   h1 {
     font-size: 48px;
