@@ -79,7 +79,7 @@
     text-align: center;
     flex: 1 1 100%;
 
-    @include sm {
+    @include xs {
       flex: 1 1 50%;
     }
 
@@ -129,8 +129,9 @@
   .where {
     flex: 1 1 100%;
 
-    @include sm {
+    @include xs {
       flex: 1 1 50%;
+      border-left: $border;
     }
 
     @include md {
