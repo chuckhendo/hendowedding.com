@@ -1,0 +1,205 @@
+
+.introduction {
+  // variables
+  $border: 2px solid rgba(#fff, 0.3);
+  background: $magenta;
+  color: #fff;
+  font-size: 16px;
+
+  @include lg {
+    font-size: 19px;
+  }
+
+  @include xl {
+    font-size: 22px;
+  }
+
+  h2 {
+    text-align: left;
+    font-family: 'Rockwell W01';
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+
+    @include md {
+      text-align: left;
+      font-size: 1.8em;
+    }
+
+    @include sm {
+      font-size: 1.6em;
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .when, .where, .what, .attire, .map {
+    overflow: hidden;
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+    padding: 1em;
+
+    @include md {
+      text-align: left;
+      padding: 1.5em;
+    }
+
+    @include lg {
+      padding: 2em;
+    }
+  }
+
+  .what, .attire {
+    border-top: $border;
+  }
+
+  .when, .where {
+    border-bottom: $border;
+
+    @include sm {
+      border-bottom: none;
+    }
+  }
+
+  .attire, .where {
+    @include sm {
+      border-left: $border;
+    }
+  }
+
+  .when {
+    font-size: 1em;
+    text-align: center;
+    flex: 1 1 100%;
+
+    @include sm {
+      flex: 1 1 50%;
+    }
+
+    @include md {
+      flex: 0 0 auto;
+    }
+
+    .block-content {
+      text-align: center;
+      display: inline-block;
+
+      @include md {
+        font-size: 0.9em;
+      }
+
+      @include lg {
+        font-size: 1em;
+      }
+    }
+
+    .month-day {
+      font-size: 3em;
+      font-weight: 200;
+      letter-spacing: -0.02em;
+      margin-bottom: -1em;
+    }
+
+    .year, .time {
+      font-size: 5em;
+      margin-bottom: -0.75em;
+    }
+
+
+    .year {
+      letter-spacing: 0.06em;
+      font-weight: 500;
+
+    }
+
+    .time {
+      letter-spacing: 0.06em;
+      font-weight: 800;
+
+    }
+  }
+
+  .where {
+    flex: 1 1 100%;
+
+    @include sm {
+      flex: 1 1 50%;
+    }
+
+    @include md {
+      flex: 1 1 23%;
+    }
+
+    .info {
+      font-size: 1.3em;
+
+
+      @include md {
+        font-size: 1.15em;
+      }
+    }
+
+    h3 {
+      font-weight: 200;
+      font-size: 2.3em;
+      margin: 0;
+
+      @include md {
+        font-size: 2.2em;
+      }
+
+      @include lg {
+        font-size: 2.3em;
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .map {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+
+    @include sm {
+      border-top: $border;
+    }
+
+    @include md {
+      flex: 4 1 50%;
+      border-left: $border;
+      border-top: none;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 18em;
+
+      @include md {
+        min-height: 10em;
+      }
+    }
+  }
+
+  .what, .attire {
+    flex: 1 1 100%;
+    border-top: $border;
+
+    @include sm {
+      flex: 1 1 50%;
+    }
+  }
+
+}

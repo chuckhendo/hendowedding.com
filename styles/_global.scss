@@ -22,10 +22,57 @@ body {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
+
+  @include xs {
+    width: 756px;
+  }
+
+  @include md {
+    width: 1010px;
+  }
+
+  @include lg {
+    width: 1420px;
+  }
+
+  @include xl {
+    width: 1660px;
+  }
 }
 
 .light {
   font-weight: 200;
+}
+
+
+section {
+  font-family: 'Futura W01';
+  padding: 2em 0;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    position: relative;
+    font-weight: 900;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 2em;
+      height: 2px;
+      background: $line-light;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
 }

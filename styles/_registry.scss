@@ -1,0 +1,80 @@
+.registry {
+  background: $green;
+
+  h1:after {
+    background: $line-dark;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .registry-info, .registry-links {
+    flex: 1 1 50%;
+    padding: 0 2em;
+  }
+
+  .registry-links {
+    list-style: none;
+    padding: 0 2em;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    li {
+      flex: 1 1 50%;
+      padding: 1em;
+      display: flex;
+
+      a {
+        display: flex;
+        flex: 1 0 100px;
+        height: 120px;
+        background: $grey;
+        align-self: center;
+        font-size: 0;
+        border: 1px solid $dark-grey;
+        border-radius: 3px;
+      }
+
+      .name {
+        flex: 1 1 0;
+        background: 50% 50% no-repeat;
+        background-size: 75% auto;
+        opacity: 0.65;
+        transition: 0.3s opacity;
+      }
+
+      a:hover .name {
+        opacity: 1;
+      }
+
+      &:nth-child(1) {
+        .name {
+          background-image: url('../images/leukemia_lymphoma_society.svg');
+        }
+      }
+
+      &:nth-child(2) {
+        .name {
+          background-image: url('../images/the-tabitha-fund1.svg');
+        }
+      }
+
+      &:nth-child(3) {
+        .name {
+          background-image: url('../images/amazon.svg');
+        }
+      }
+
+      &:nth-child(4) {
+        .name {
+          background-image: url('../images/Bed_Bath__and__Beyond.svg');
+        }
+      }
+    }
+  }
+}
