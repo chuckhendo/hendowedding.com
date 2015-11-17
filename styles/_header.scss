@@ -1,10 +1,23 @@
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/background/moon.svg'), url('../images/background/mask.png'), url('../images/background/stars.png');
+  background-repeat: no-repeat, repeat, repeat;
+  background-size: 10vw 10vw, auto auto, 500px auto;
+  background-position: 3vw calc(3vw + #{$nav-height}), 0 0, center center;
+  animation: move-mask 50s linear alternate infinite;
+  z-index: -1;
+}
+
 .site-header {
   width: 100vw;
   height: 100vh;
   position: relative;
   // background-attachment: fixed;
   background-size: 500px auto;
-  background-color: #234246;
   overflow: hidden;
   display: flex;
   perspective: 0px;
@@ -17,19 +30,6 @@
     to {
       background-position: 3vw 3vw, -10000px 5000px, center center;
     }
-  }
-
-  .sky {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('../images/background/moon.svg'), url('../images/background/mask.png'), url('../images/background/stars.png');
-    background-repeat: no-repeat, repeat, repeat;
-    background-size: 10vw 10vw, auto auto, 500px auto;
-    background-position: 3vw calc(3vw + #{$nav-height}), 0 0, center center;
-    animation: move-mask 50s linear alternate;
   }
 
   h1 {
