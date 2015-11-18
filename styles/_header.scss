@@ -6,7 +6,7 @@
   height: 100vh;
   background: url('../images/background/moon.svg'), url('../images/background/mask.png'), url('../images/background/stars.png');
   background-repeat: no-repeat, repeat, repeat;
-  background-size: 10vw 10vw, auto auto, 500px auto;
+  background-size: 12vmin 12vmin, auto auto, 500px auto;
   background-position: 3vw calc(3vw + #{$nav-height}), 0 0, center center;
   // animation: move-mask 50s linear alternate infinite;
   // backface-visibility: hidden;
@@ -22,7 +22,6 @@
   // background-attachment: fixed;
   background-size: 500px auto;
   overflow: hidden;
-  display: flex;
   perspective: 0px;
   z-index: 1;
 
@@ -36,18 +35,22 @@
     }
   }
 
+  .title-container {
+    display: flex;
+    height: calc(100vh - 30vw);
+    margin-top: $nav-height;
+  }
+
   h1 {
     font-family:'Rockwell W01';
     font-weight: 800;
     text-transform: uppercase;
     align-self: center;
     text-align: right;
-    width: 80%;
+    width: 80vmin;
     margin: 0 auto;
-    display: inline-block;
-    font-size: 14vw;
+    font-size: 14vmin;
     padding-bottom: 0.25em;
-    margin-bottom: 1em;
     color: #8ABEAF;
     line-height: 0.9;
     background: url('../images/and.svg') no-repeat 6% bottom;
