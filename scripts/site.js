@@ -1,15 +1,8 @@
-// Main JS should go here!
-// Include scripts using Browserify by doing:
-// var $ = require('jquery');
-
 require('./modules/parallax.js');
-// require('./modules/form.js');
 
 var angular = require('angular');
 
 var app = angular.module('hendowedding', [require('angular-animate')]);
-
-
 
 app.controller('MainCtrl', ['$window', '$scope', function($window) {
   this.rsvpVisible = false;
@@ -20,6 +13,21 @@ app.controller('MainCtrl', ['$window', '$scope', function($window) {
 
   this.hideRsvp = function() {
     this.rsvpVisible = false;
+  }
+}]);
+
+app.directive('mapNoScroll', [function() {
+  return {
+    link: function(scope, element, attribute) {
+      element.css('pointer-events', 'none');
+      element.parent().on('mousedown', function () {
+        element.css('pointer-events', '');
+      });
+
+      element.on('mouseleave', function () {
+        element.css('pointer-events', 'none');
+      });
+    }
   }
 }]);
 
