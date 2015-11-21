@@ -1,8 +1,10 @@
 .places-to-stay {
   background: $grey;
+  background: url('../images/background/bg-hotels.png');
   text-align: center;
   padding-left: 2em;
   padding-right: 2em;
+  padding-bottom: 5em;
 
   h1:after {
     background: $line-dark;
@@ -12,6 +14,18 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  a {
+    color: darken($green, 20%);
+
+    &:hover {
+      color: darken($green, 40%);
+    }
+
+    &:active {
+      color: #000;
+    }
   }
 
   .hotels {

@@ -1,5 +1,6 @@
 .registry {
   background: $green;
+  border-top: 1px solid darken($green, 20%);
 
   h1:after {
     background: $line-dark;
@@ -35,21 +36,30 @@
       display: flex;
 
       a {
+        align-self: center;
+        background: $grey;
+        border: 1px solid rgba(0,0,0,.4);
+        border-radius: 3px;
         display: flex;
         flex: 1 0 100px;
-        height: 120px;
-        background: $grey;
-        align-self: center;
         font-size: 0;
-        border: 1px solid $dark-grey;
-        border-radius: 3px;
+        height: 120px;
+        transition: 0.3s border, 0.3s background;
+
+        &:hover {
+          border: 1px solid rgba(0,0,0,1);
+        }
+
+        &:active {
+          background: darken($grey, 5%);
+        }
       }
 
       .name {
         flex: 1 1 0;
         background: 50% 50% no-repeat;
-        background-size: 75% auto;
-        opacity: 0.65;
+        background-size: 50% auto;
+        opacity: 0.6;
         transition: 0.3s opacity;
       }
 

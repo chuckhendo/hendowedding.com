@@ -1,11 +1,11 @@
 .site-nav {
+  background: $green;
+  border-bottom: 1px solid darken($green, 20%);
   position: fixed;
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
   width: 100%;
   z-index: 9998;
-  background: $green;
-  border-bottom: 1px solid rgba(0,0,0,.2);
 
   ul {
     list-style: none;
@@ -13,7 +13,7 @@
     padding: 0;
     display: flex;
     height: $nav-height;
-    padding: 0 1em;
+    padding: 0;
     align-items: stretch;
     flex-direction: row;
   }
@@ -29,15 +29,15 @@
       margin-left: auto;
 
       a {
-        background: $pink;
+        background: $grey;
         color: #000;
 
         &:hover {
-          background: lighten($pink, 5%);
+          background: lighten($pink, 10%);
         }
 
         &:active {
-          background: darken($pink, 3%);
+          background: $pink;
         }
       }
     }
@@ -45,21 +45,19 @@
 
   a {
     flex: 1 1 auto;
-    padding: 0.2em 0.8em;
+    padding: 0.3em 0.7em 0.4em;
     color: #000;
-    // text-transform: uppercase;
     text-decoration: none;
     font-family: "Futura W01";
     font-size: 1.2em;
-    border-radius: 3px;
     transition: 0.3s background;
 
     &:hover {
-      background: rgba(#fff, 0.3);
+      background: $grey;
     }
 
     &:active {
-      background: rgba(#000, 0.1);
+      background: darken($green, 25%);
     }
   }
 }

@@ -1,81 +1,66 @@
 .sky {
-  animation: 'stars97' 1s infinite;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('../images/background/bg-stars-97.gif');
+  animation: 'starfield' 7s infinite;
+  background: url('../images/background/bg-stars-401.gif');
   background-position: center center;
   background-repeat: repeat;
   background-size: auto auto;
+  height: 100vh;
   position: fixed;
-  // animation: move-mask 50s linear alternate infinite;
-  // backface-visibility: hidden;
-  // background-attachment: fixed;
-  z-index: 0;
+    top: 0;
+    left: 0;
   transform: translate3d(0,0,0);
+  width: 100vw;
+  z-index: 0;
   &:before {
-    animation: none;
-    animation: 'stars211' 5s infinite;
+    //animation: 'starfield' 8s infinite;
+    animation-delay: 3s;
     background: url('../images/background/bg-stars-211.gif');
     background-position: center center;
     background-repeat: repeat;
     background-size: auto auto;
-    content:'';
+    content: '';
     height: 100vh;
     position: fixed;
     width: 100vw;
   }
   &:after {
-    animation: none;
-    animation: 'stars401' 10s infinite;
-    background: url('../images/background/bg-stars-401.gif');
+    //animation: 'starfield' 5s infinite;
+    animation-delay: 5s;
+    background: url('../images/background/bg-stars-097.gif');
     background-position: center center;
     background-repeat: repeat;
     background-size: auto auto;
-    content:'';
+    content: '';
     height: 100vh;
+    opacity: .5;
     position: fixed;
     width: 100vw;
   }
 }
 
-@keyframes stars97 {
+@keyframes starfield {
   0% {
     opacity: 1;
   }
+  20% {
+    opacity: .4;
+  }
+  40% {
+      opacity: .8;
+  }
   50% {
-    opacity: 0;
+    opacity: .5;
+  }
+  70% {
+    opacity: .7;
+  }
+  80% {
+    opacity: .3;
   }
   100% {
     opacity: 1;
   }
 }
-
-@keyframes stars211 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/*@keyframes stars401 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}*/
 
 .site-header {
   width: 100vw;
@@ -125,7 +110,7 @@
     transform-style: preserve-3d;
     transform: translateZ(0);
     .b7 {
-      background-position: 50% 140%;
+      background-position: 50% 145%;
     }
   }
 
