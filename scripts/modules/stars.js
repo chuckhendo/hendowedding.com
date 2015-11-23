@@ -2,11 +2,14 @@
 // require('jquery.transit');
 //
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const COLORS = [
+var COLORS = [
   "#E6E5EB",
+  "#E6E5EB",
+  "#E6E5EB",
+  "#8ABEAF",
   "#8ABEAF",
   "#F1AAB4",
 ]
@@ -77,7 +80,8 @@ app.directive('stars', ['$window', function($window) {
 
 
             var ctx=$layer[0].getContext("2d");
-            ctx.fillStyle=COLORS[getRandomInt(0,2)];
+            ctx.fillStyle=COLORS[getRandomInt(0,5)];
+            console.log(ctx.fillStyle)
             contexts.push(ctx);
             // startBlinking($layer);
 
