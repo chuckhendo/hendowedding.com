@@ -102,7 +102,8 @@
     transform-style: preserve-3d;
     transform: translateZ(0);
     .b7 {
-      background-position: 50% 145%;
+      // transform: translate3d(0, 7vmax, 0)
+      // background-position: 50% 145%;
     }
   }
 
@@ -113,5 +114,9 @@
       z-index: $i;
     }
     $i: $i - 1;
+  }
+
+  .b7 {
+    background-image: url('../images/background/7-old.svg');
   }
 }
