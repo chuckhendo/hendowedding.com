@@ -1,9 +1,11 @@
 require('./modules/parallax.js');
-require('./modules/stars.js');
 
 var angular = require('angular');
 
 var app = angular.module('hendowedding', [require('angular-animate')]);
+
+require('./modules/stars.js');
+
 
 app.controller('MainCtrl', ['$window', '$scope', function($window) {
   this.rsvpVisible = false;

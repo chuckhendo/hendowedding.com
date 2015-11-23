@@ -1,3 +1,16 @@
+@function rand($min: 0, $max: 1) {
+  $tempRandom: random();
+  @if $tempRandom < $min {
+    $tempRandom: $min;
+  }
+
+  @if $tempRandom > $max {
+    $tempRandom: $max;
+  }
+
+  @return $tempRandom;
+}
+
 .sky {
   background: linear-gradient(#00171A, #325A57 50%);
 
@@ -13,18 +26,19 @@
   z-index: 0;
   // display: none;
 
-  $number-of-layers: 6;
+  $number-of-layers: 9;
   .layer{
     position:absolute;
     top:0;
     left:0;
-    // animation: 1s infinite alternate;
+    // animation: infinite alternate;
     // transition: 1s opacity;
 
 
     @for $i from 1 through $number-of-layers {
       &:nth-child(#{$i}) {
-        animation-name: starfield-#{$i};
+        // animation-name: starfield-#{$i};
+        // animation-duration: #{rand(1, 2)}s;
       }
 
       @keyframes starfield-#{$i} {
@@ -32,7 +46,7 @@
           opacity: 1;
         }
         100% {
-          opacity: #{($i / ($number-of-layers * 1.2)) - .1};
+          opacity: #{rand(0.4, 0.6)};
         }
       }
     }
