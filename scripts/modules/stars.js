@@ -7,9 +7,6 @@ function getRandomInt(min, max) {
 
 const COLORS = [
   "#E6E5EB",
-  "#E6E5EB",
-  "#E6E5EB",
-  "#8ABEAF",
   "#8ABEAF",
   "#F1AAB4",
 ]
@@ -74,7 +71,7 @@ $(document).ready(function(){
       	.appendTo(skyLayer)
       ;
       var ctx=$layer.get(0).getContext("2d");
-      ctx.fillStyle=COLORS[getRandomInt(0,5)];
+      ctx.fillStyle=COLORS[getRandomInt(0,2)];
       contexts.push(ctx);
       startBlinking($layer);
 
