@@ -7,16 +7,30 @@ var app = angular.module('hendowedding', [require('angular-animate')]);
 require('./modules/stars.js');
 
 
-app.controller('MainCtrl', ['$window', '$scope', function($window) {
+app.controller('MainCtrl', ['$window', '$scope', function($window, $scope) {
   this.rsvpVisible = false;
 
   this.showRsvp = function() {
     this.rsvpVisible = true;
+    this.mobileNavIsVisible = false;
   }
 
   this.hideRsvp = function() {
     this.rsvpVisible = false;
   }
+
+  this.toggleMobileNav = function(e) {
+    e.preventDefault();
+    this.mobileNavIsVisible = !this.mobileNavIsVisible;
+  }
+
+  angular.element($window).on('resize', () => {
+    if(this.mobileNavIsVisible) {
+      $scope.$apply(() => {
+        this.mobileNavIsVisible = false;
+      });
+    }
+  });
 }]);
 
 app.directive('mapNoScroll', [function() {

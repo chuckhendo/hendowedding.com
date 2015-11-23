@@ -9,21 +9,8 @@
   z-index: 9999;
   padding: 0;
 
-
-  .overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 1;
-  }
-
   form {
     background: $pink;
-    // width: calc(100% - 1em);
     width: calc(#{$desktop-width / 2} + 4em);
     max-width: 100%;
     max-height: calc(100% - 1em);
@@ -47,10 +34,14 @@
   }
 
   .main-info, .additional-info {
-    display: inline-block;
     vertical-align: top;
     white-space: normal;
-    width: #{$desktop-width / 2};
+    display: block;
+
+    @include sm {
+      display: inline-block;
+      width: #{$desktop-width / 2};
+    }
 
 
     &:after {
@@ -62,11 +53,10 @@
 
   .main-info {
     font-size: 1.3em;
-    margin-right: -0.32em;
-  }
 
-  .additional-info {
-
+    @include sm {
+      margin-right: -0.32em;
+    }
   }
 
   h1 {
@@ -165,6 +155,24 @@
     cursor: pointer;
     transition: 0.2s background;
 
+    &.desktop-submit {
+      display: none;
+    }
+
+    &.mobile-submit {
+      margin-top: 1em;
+    }
+
+    @include sm {
+      &.desktop-submit {
+        display: block;
+      }
+
+      &.mobile-submit {
+        display: none;
+      }
+    }
+
     &:hover {
       background: rgba(#fff, 0.8);
     }
@@ -173,8 +181,11 @@
 
   .additional-info {
     opacity: 1;
-    margin-left: 3em;
     position: relative;
+
+    @include sm {
+      margin-left: 3em;
+    }
 
     &.ng-hide-remove, &.ng-hide-add {
       transition: opacity 0.3s;
@@ -184,14 +195,17 @@
       opacity: 0;
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 1em;
-      bottom: 1em;
-      left: calc(-1.5em - 1px);
-      width: 2px;
-      background: rgba(#000, 0.3);
+
+    @include sm {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1em;
+        bottom: 1em;
+        left: calc(-1.5em - 1px);
+        width: 2px;
+        background: rgba(#000, 0.3);
+      }
     }
   }
 
@@ -200,9 +214,8 @@
   }
 
   form.rsvp-yes {
-    width: calc(#{$desktop-width} + 7em);
-
-    .main-info, .additional-info {
+    @include sm {
+      width: calc(#{$desktop-width} + 7em);
     }
   }
 

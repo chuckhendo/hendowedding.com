@@ -81,7 +81,6 @@ app.directive('stars', ['$window', function($window) {
 
             var ctx=$layer[0].getContext("2d");
             ctx.fillStyle=COLORS[getRandomInt(0,5)];
-            console.log(ctx.fillStyle)
             contexts.push(ctx);
             // startBlinking($layer);
 
