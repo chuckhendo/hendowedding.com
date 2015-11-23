@@ -1,4 +1,5 @@
 require('./modules/parallax.js');
+require('./modules/stars.js');
 
 var angular = require('angular');
 

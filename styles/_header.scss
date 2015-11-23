@@ -12,53 +12,32 @@
   width: 100vw;
   z-index: 0;
   // display: none;
-  &:after {
-    //animation: 'starfield' 5s infinite;
-    animation-delay: 5s;
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto auto;
-    content: '';
-    height: 100vh;
-    opacity: .5;
-    position: fixed;
-    width: 100vw;
+
+  $number-of-layers: 6;
+  .layer{
+    position:absolute;
+    top:0;
+    left:0;
+    // animation: 1s infinite alternate;
+    // transition: 1s opacity;
+
+
+    @for $i from 1 through $number-of-layers {
+      &:nth-child(#{$i}) {
+        animation-name: starfield-#{$i};
+      }
+
+      @keyframes starfield-#{$i} {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: #{($i / ($number-of-layers * 1.2)) - .1};
+        }
+      }
+    }
   }
 
-  .sky-1, .sky-2, .sky-3 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    // animation: 'starfield' 1s infinite alternate;
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto auto;
-    top: 0;
-    left: 0;
-  }
-
-  .sky-1 {
-    background-image: url('../images/background/bg-stars-401.gif');
-  }
-
-  .sky-2 {
-    background-image: url('../images/background/bg-stars-211.gif');
-    animation-delay: 3s;
-  }
-
-  .sky-3 {
-    background-image: url('../images/background/bg-stars-097.gif');
-    animation-delay: 5s;
-  }
-}
-
-@keyframes starfield {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
 }
 
 .site-header {
