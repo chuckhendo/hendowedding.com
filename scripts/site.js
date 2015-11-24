@@ -1,6 +1,7 @@
 require('./modules/parallax.js');
 
 var angular = require('angular');
+var attachFastClick = require('fastclick');
 
 var app = angular.module('hendowedding', [
   require('angular-animate'),
@@ -11,16 +12,16 @@ require('./modules/stars.js');
 
 app.run(['$rootScope', function($rootScope) {
   if(!window.history || !history.replaceState) {
-    console.log('returning!')
-  return;
-}
-$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
-  //Automaticly update location
-  var hash = $element.prop('hash');
-  if (hash) {
-    history.replaceState(null, null, hash);
+    return;
   }
-});
+  $rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
+    var hash = $element.prop('hash');
+    if (hash) {
+      history.replaceState(null, null, hash);
+    }
+  });
+
+  attachFastClick(document.body);
 }]);
 
 app.controller('MainCtrl', ['$window', '$scope', function($window, $scope) {
@@ -63,6 +64,17 @@ app.directive('mapNoScroll', [function() {
     }
   }
 }]);
+
+app.directive('noTouchScroll', [function() {
+  return {
+    link: function(scope, element, attribute) {
+      element.on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
+  }
+}]);
+
 
 app.directive('noScroll', ['$parse',function($parse) {
   return {

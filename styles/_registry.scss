@@ -44,11 +44,28 @@
 
     li {
       flex: 1 1 50%;
-      padding: 1em;
       display: flex;
+      padding: 0.5em;
+
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
+
+      &:nth-child(even) {
+        padding-right: 0;
+      }
 
       @include sm {
         flex: 1 1 100%;
+        padding: 1em;
+
+        &:nth-child(odd) {
+          padding-left: 1em;
+        }
+
+        &:nth-child(even) {
+          padding-right: 1em;
+        }
       }
 
       @include md {

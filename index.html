@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="hendowedding">
+<html lang="en" ng-app="hendowedding" no-scroll="main.rsvpVisible || main.mobileNavIsVisible">
 <head>
     <meta charset="UTF-8">
     <title>The Wedding of Karolyn and Carl</title>
@@ -30,7 +30,7 @@
         </ul>
       </nav>
     </div>
-    <div class="overlay nav-overlay" ng-cloak ng-click="main.toggleMobileNav($event)" ng-show="main.mobileNavIsVisible"></div>
+    <div class="overlay nav-overlay" ng-cloak ng-click="main.toggleMobileNav($event)" ng-show="main.mobileNavIsVisible" no-touch-scroll></div>
     <div class="sky" stars>
     </div>
     <header class="site-header">
@@ -128,7 +128,7 @@
       </div>
     </section>
     <section class="rsvp" ng-show="main.rsvpVisible" ng-cloak>
-      <div class="overlay" ng-click="main.hideRsvp()"></div>
+      <div class="overlay" no-touch-scroll ng-click="main.hideRsvp()"></div>
       <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.rsvp === 'Yes' }">
         <div class="main-info">
           <h1>RSVP</h1>

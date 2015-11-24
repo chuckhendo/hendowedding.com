@@ -17,14 +17,14 @@
     overflow: visible;
     margin: auto;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     transition: 1s all;
     font-size: 20px;
     padding: 2em;
     border-bottom: 1px solid #000;
     border-radius: 0 0 10px 10px;
-
 
     &:after {
       content: '';

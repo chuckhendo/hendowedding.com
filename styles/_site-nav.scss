@@ -15,6 +15,8 @@ $mobile-nav-breakpoint: 580px;
   border-bottom: 1px solid darken($green, 20%);
   display: block;
   width: 100%;
+  transform: translate3d(0,-$mobile-nav-height,0);
+  backface-visibility: hidden;
 
   ul {
     list-style: none;
@@ -120,7 +122,7 @@ $mobile-nav-breakpoint: 580px;
     z-index: 9999;
     flex-direction: column;
     background: lighten($green,10%);
-    display: none;
+
 
     li {
       flex: 1 1 0;
@@ -133,6 +135,7 @@ $mobile-nav-breakpoint: 580px;
     }
 
     .mobile-nav {
+      visibility: visible;
       display: flex;
 
       @media (min-width: $mobile-nav-breakpoint) {
@@ -147,6 +150,10 @@ $mobile-nav-breakpoint: 580px;
   &.show-mobile-nav-add {
     transition: all $animation-time;
     transform: translate3d(0, -$mobile-nav-height, 0);
+  }
+
+  &.show-mobile-nav-add-active {
+    transform: translate3d(0, 0, 0);
   }
 
   &.show-mobile-nav {
