@@ -17,8 +17,8 @@
     overflow: visible;
     margin: auto;
     overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     transition: 1s all;
     font-size: 20px;

@@ -24,7 +24,7 @@ app.run(['$rootScope', function($rootScope) {
   attachFastClick(document.body);
 }]);
 
-app.controller('MainCtrl', ['$window', '$scope', '$http', function($window, $scope, $http) {
+app.controller('MainCtrl', ['$window', '$scope', '$http', '$timeout', function($window, $scope, $http, $timeout) {
   this.rsvpVisible = false;
 
   this.showRsvp = function() {
@@ -53,8 +53,12 @@ app.controller('MainCtrl', ['$window', '$scope', '$http', function($window, $sco
 
     $http.get(
       `http://getsimpleform.com/messages/ajax?${urlData}`
-    ).success(function() {
-      $scope.rsvpSubmitted = "Karolyn, please put some text here";      
+    ).success(() => {
+      $scope.rsvpSubmitted = this.form.rsvp === "Yes" ? "We can't wait to see you there!" : "We'll miss you!"
+      $timeout(() => {
+        this.rsvpVisible = false;
+      }, 4000);
+
     });
   }
 
