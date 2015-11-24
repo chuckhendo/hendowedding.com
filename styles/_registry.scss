@@ -14,19 +14,22 @@
   .registry-info, .registry-links {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 100%;
+    flex-basis: auto;
+    width: 100%;
     padding: 0 2em;
 
     @include sm {
       flex-grow: 1;
       flex-shrink: 1;
-      flex-basis: 65%;
+      flex-basis: auto;
+      width: 65%;
     }
 
     @include md {
       flex-grow: 1;
       flex-shrink: 1;
-      flex-basis: 50%;
+      flex-basis: auto;
+      width: 50%;
     }
   }
 
@@ -43,19 +46,22 @@
     @include sm {
       flex-grow: 1;
       flex-shrink: 1;
-      flex-basis: 35%;
+      flex-basis: auto;
+      width: 35%;
     }
 
     @include md {
       flex-grow: 1;
       flex-shrink: 1;
-      flex-basis: 50%;
+      flex-basis: auto;
+      width: 50%;
     }
 
     li {
       flex-grow: 1;
       flex-shrink: 1;
-      flex-basis: 50%;
+      flex-basis: auto;
+      width: 50%;
       display: flex;
       padding: 0.5em;
 
@@ -70,7 +76,8 @@
       @include sm {
         flex-grow: 1;
         flex-shrink: 1;
-        flex-basis: 100%;
+        flex-basis: auto;
+        width: 100%;
         padding: 1em;
 
         &:nth-child(odd) {
@@ -85,7 +92,8 @@
       @include md {
         flex-grow: 1;
         flex-shrink: 1;
-        flex-basis: 50%;
+        flex-basis: auto;
+        width: 50%;
       }
 
       a {
