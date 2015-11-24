@@ -131,7 +131,7 @@
     </section>
     <section class="rsvp" ng-show="main.rsvpVisible" ng-submit="main.submitForm($event)" ng-cloak>
       <div class="overlay" no-touch-scroll ng-click="main.hideRsvp()"></div>
-      <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.rsvp === 'Yes' }">
+      <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.form.rsvp === 'Yes' }">
         <div class="form-wrapper" ng-hide="rsvpSubmitted">
           <div class="main-info">
             <h1>RSVP</h1>
