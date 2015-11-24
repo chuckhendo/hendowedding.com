@@ -41,11 +41,6 @@ app.controller('MainCtrl', ['$window', '$scope', '$http', '$timeout', function($
     this.mobileNavIsVisible = !this.mobileNavIsVisible;
   }
 
-  this.linkNotAvailable = function(e) {
-    e.preventDefault();
-    alert("Sorry, we don't currently have a link for this charity. Check back for updates");
-  }
-
   this.submitForm = function(e) {
     e.preventDefault();
 
