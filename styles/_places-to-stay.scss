@@ -17,6 +17,10 @@
     margin-right: auto;
   }
 
+  h3 {
+    margin-bottom: 0.5em;
+  }
+
   a {
     color: darken($green, 20%);
 
@@ -41,6 +45,31 @@
 
     @include xs {
       flex-direction: row;
+    }
+
+    a {
+      background: darken($green, 20%);
+      transition: 0.3s background;
+      color: #fff;
+      display: inline-block;
+      width: 6em;
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 0.3em 0;
+
+      &:hover {
+        background: darken($green, 40%);
+        color: #fff;
+      }
+
+      &:active {
+        color: #000;
+      }
+
+      &:first-of-type {
+        margin-right: 0.5em;
+      }
     }
 
     li {
