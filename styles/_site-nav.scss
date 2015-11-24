@@ -34,7 +34,9 @@ $mobile-nav-breakpoint: 580px;
   }
 
   li {
-    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -97,7 +99,9 @@ $mobile-nav-breakpoint: 580px;
   }
 
   a {
-    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
     padding: 0.3em 0.7em 0.4em;
     color: #000;
     text-decoration: none;
@@ -125,7 +129,9 @@ $mobile-nav-breakpoint: 580px;
     background: lighten($green,10%);
 
     li {
-      flex: 1 1 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
     }
   }
 

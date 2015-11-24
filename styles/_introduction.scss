@@ -7,6 +7,10 @@
   font-size: 16px;
   margin-top: -2px;
 
+  @include md {
+    font-size: 15px;
+  }
+
   @include lg {
     font-size: 19px;
   }
@@ -78,14 +82,23 @@
   .when {
     font-size: 1em;
     text-align: center;
-    flex: 1 1 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100%;
 
     @include xs {
-      flex: 1 1 50%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: 50%;
     }
 
     @include md {
-      flex: 0 0 auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: 24%;
     }
 
     .block-content {
@@ -128,15 +141,24 @@
   }
 
   .where {
-    flex: 1 1 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100%;
 
     @include xs {
-      flex: 1 1 50%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: 50%;
       border-left: $border;
     }
 
     @include md {
-      flex: 1 1 23%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: 22%;
     }
 
     .info {
@@ -171,14 +193,20 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    flex: 1 1 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100%;
 
     @include sm {
       border-top: $border;
     }
 
     @include md {
-      flex: 4 1 50%;
+      flex-grow: 4;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: 50%;
       border-left: $border;
       border-top: none;
     }
@@ -186,7 +214,9 @@
     iframe {
       display: block;
       width: 100%;
-      flex: 1 1 auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
       min-height: 18em;
 
       @include md {
@@ -196,11 +226,17 @@
   }
 
   .what, .attire {
-    flex: 1 1 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100%;
     border-top: $border;
 
     @include sm {
-      flex: 1 1 50%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: 50%;
     }
   }
 
