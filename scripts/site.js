@@ -2,10 +2,26 @@ require('./modules/parallax.js');
 
 var angular = require('angular');
 
-var app = angular.module('hendowedding', [require('angular-animate')]);
+var app = angular.module('hendowedding', [
+  require('angular-animate'),
+  require('angular-scroll')
+]);
 
 require('./modules/stars.js');
 
+app.run(['$rootScope', function($rootScope) {
+  if(!window.history || !history.replaceState) {
+    console.log('returning!')
+  return;
+}
+$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
+  //Automaticly update location
+  var hash = $element.prop('hash');
+  if (hash) {
+    history.replaceState(null, null, hash);
+  }
+});
+}]);
 
 app.controller('MainCtrl', ['$window', '$scope', function($window, $scope) {
   this.rsvpVisible = false;
