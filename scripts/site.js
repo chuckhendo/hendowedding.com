@@ -24,7 +24,7 @@ app.run(['$rootScope', function($rootScope) {
   attachFastClick(document.body);
 }]);
 
-app.controller('MainCtrl', ['$window', '$scope', function($window, $scope) {
+app.controller('MainCtrl', ['$window', '$scope', '$http', function($window, $scope, $http) {
   this.rsvpVisible = false;
 
   this.showRsvp = function() {
@@ -39,6 +39,23 @@ app.controller('MainCtrl', ['$window', '$scope', function($window, $scope) {
   this.toggleMobileNav = function(e) {
     e.preventDefault();
     this.mobileNavIsVisible = !this.mobileNavIsVisible;
+  }
+
+  this.submitForm = function(e) {
+    e.preventDefault();
+
+    var data = this.form;
+    data.form_api_token = "74e4f498c5d74da75f8580f516fd5133";
+
+    var urlData = Object.keys(data).map(function(k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
+
+    $http.get(
+      `http://getsimpleform.com/messages/ajax?${urlData}`
+    ).success(function() {
+      $scope.rsvpSubmitted = "Karolyn, please put some text here";      
+    });
   }
 
   angular.element($window).on('resize', () => {

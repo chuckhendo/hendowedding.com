@@ -128,29 +128,34 @@
         </div>
       </div>
     </section>
-    <section class="rsvp" ng-show="main.rsvpVisible" ng-cloak>
+    <section class="rsvp" ng-show="main.rsvpVisible" ng-submit="main.submitForm($event)" ng-cloak>
       <div class="overlay" no-touch-scroll ng-click="main.hideRsvp()"></div>
       <form action="" class="rsvp-form" ng-class="{ 'rsvp-yes': main.rsvp === 'Yes' }">
-        <div class="main-info">
-          <h1>RSVP</h1>
-          <label for="name">Name</label>
-          <input id="name" type="text" name="Name">
-          <div class="rsvp-yes-no">
-            <input type="radio" id="rsvp-yes" name="RSVP" ng-model="main.rsvp" value="Yes">
-            <label for="rsvp-yes">We&rsquo;ll be there!</label>
-            <input type="radio" id="rsvp-no" name="RSVP" ng-model="main.rsvp" value="No">
-            <label for="rsvp-no">We can&rsquo;t make it!</label>
+        <div class="form-wrapper" ng-hide="rsvpSubmitted">
+          <div class="main-info">
+            <h1>RSVP</h1>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="Name" ng-model="main.form.name">
+            <div class="rsvp-yes-no">
+              <input type="radio" id="rsvp-yes" name="RSVP" ng-model="main.form.rsvp" value="Yes">
+              <label for="rsvp-yes">We&rsquo;ll be there!</label>
+              <input type="radio" id="rsvp-no" name="RSVP" ng-model="main.form.rsvp" value="No">
+              <label for="rsvp-no">We can&rsquo;t make it!</label>
+            </div>
+            <button type="submit" class="desktop-submit">Submit</button>
           </div>
-          <button type="submit" class="desktop-submit">Submit</button>
-        </div>
-        <div class="additional-info" ng-show="main.rsvp === 'Yes'">
-          <label for="additional-guests">Provide the names of all invited guests in your party that are able to attend</label>
-          <textarea name="Additional guests" id="additional-guests"></textarea>
-          <label for="food-allergies">List any food allergies of which we should be&nbsp;aware</label>
-          <textarea name="Food allergies" id="food-allergies"></textarea>
-          <label for="contact">Provide the best way to contact you (in case we have questions)</label>
-          <textarea name="Contact info" id="contact"></textarea>
+          <div class="additional-info" ng-show="main.form.rsvp === 'Yes'">
+            <label for="additional-guests">Provide the names of all invited guests in your party that are able to attend</label>
+            <textarea name="Additional guests" id="additional-guests" ng-model="main.form.guests"></textarea>
+            <label for="food-allergies">List any food allergies of which we should be&nbsp;aware</label>
+            <textarea name="Food allergies" id="food-allergies" ng-model="main.form.allergies"></textarea>
+            <label for="contact">Provide the best way to contact you (in case we have questions)</label>
+            <textarea name="Contact info" id="contact" ng-model="main.form.contact"></textarea>
+          </div>
           <button type="submit" class="mobile-submit">Submit</button>
+        </div>
+        <div class="rsvp-thank-you" ng-show="rsvpSubmitted">
+          {{ rsvpSubmitted }}
         </div>
       </form>
     </section>
