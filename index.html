@@ -10,10 +10,10 @@
     <div class="site-nav-wrapper">
       <nav class="site-nav" ng-class="{'show-mobile-nav': main.mobileNavIsVisible}">
         <ul class="mobile-nav" ng-cloak>
-          <li><a href="#the-wedding"><span class="light">The</span> Wedding</a></li>
-          <li><a href="#places-to-stay">Places <span class="light">to</span> Stay</a></li>
-          <li><a href="#things-to-do">Things <span class="light">to</span> Do</a></li>
-          <li><a href="#registry">Registry</a></li>
+          <li><a href="#the-wedding" ng-click="main.mobileNavIsVisible = false" du-smooth-scroll du-scrollspy><span class="light">The</span> Wedding</a></li>
+          <li><a href="#places-to-stay" ng-click="main.mobileNavIsVisible = false" du-smooth-scroll du-scrollspy>Places <span class="light">to</span> Stay</a></li>
+          <!-- <li><a href="#things-to-do" ng-click="main.mobileNavIsVisible = false" du-smooth-scroll du-scrollspy>Things <span class="light">to</span> Do</a></li> -->
+          <li><a href="#registry" ng-click="main.mobileNavIsVisible = false" du-smooth-scroll du-scrollspy>Registry</a></li>
         </ul>
         <ul>
           <li class="hamburger">
@@ -23,7 +23,7 @@
           </li>
           <li class="desktop-nav"><a href="#the-wedding" du-smooth-scroll du-scrollspy><span class="light">The</span> Wedding</a></li>
           <li class="desktop-nav"><a href="#places-to-stay" du-smooth-scroll du-scrollspy>Places <span class="light">to</span> Stay</a></li>
-          <li class="desktop-nav"><a href="#things-to-do" du-smooth-scroll du-scrollspy>Things <span class="light">to</span> Do</a></li>
+          <!-- <li class="desktop-nav"><a href="#things-to-do" du-smooth-scroll du-scrollspy>Things <span class="light">to</span> Do</a></li> -->
           <li class="desktop-nav"><a href="#registry" du-smooth-scroll du-scrollspy>Registry</a></li>
           <li class="rsvp-link"><a href="#" ng-click="main.showRsvp()">RSVP</a></li>
         </ul>
