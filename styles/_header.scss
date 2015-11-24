@@ -19,37 +19,17 @@
   background-size: auto auto;
   height: 100vh;
   position: fixed;
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
   transform: translate3d(0,0,0);
   width: 100vw;
   z-index: 0;
-  // display: none;
 
   $number-of-layers: 9;
   .layer{
     position:absolute;
     top:0;
     left:0;
-    // animation: infinite alternate;
-    // transition: 1s opacity;
-
-
-    @for $i from 1 through $number-of-layers {
-      &:nth-child(#{$i}) {
-        // animation-name: starfield-#{$i};
-        // animation-duration: #{rand(1, 2)}s;
-      }
-
-      @keyframes starfield-#{$i} {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: #{rand(0.4, 0.6)};
-        }
-      }
-    }
   }
 
 }
